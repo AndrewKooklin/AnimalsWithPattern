@@ -4,9 +4,103 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AnimalsWithPattern"
+        xmlns:viewModel="clr-namespace:AnimalsWithPattern.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Animals" 
+        Height="350" 
+        Width="650"
+        MinWidth="650"
+        MaxWidth="650"
+        Background="MediumPurple"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+
+        <viewModel:MainWindowViewModel x:Key="MainWindowViewModel"/>
+
+        <Style x:Key="HeaderGridViewColumn" TargetType="GridViewColumnHeader">
+            <Setter Property="Background" Value="Cyan"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+        </Style>
+
+        <Style x:Key="AnimalsButton" TargetType="{x:Type Button}">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Height" Value="34"/>
+            <Setter Property="Width" Value="85"/>
+            <Setter Property="Margin" Value="10 13 0 0"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Background" Value="LightGreen"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Padding" Value="0"/>
+        </Style>
+
+    </Window.Resources>
+
+    <Grid x:Name="gClients">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <ListView x:Name="lvAnimals"
+                  ItemsSource="{Binding AnimalsCollection, Source={StaticResource MainWindowViewModel}}"
+                  HorizontalAlignment="Left" 
+                  Height="400" 
+                  Margin="10,10,0,10" 
+                  VerticalAlignment="Top" 
+                  Width="625"
+                  Padding="0">
+            <ListView.View >
+                <GridView >
+                    <GridViewColumn Header="Id" 
+                                    DisplayMemberBinding="{Binding Id, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                    HeaderContainerStyle="{StaticResource HeaderGridViewColumn}"
+                                    Width="40"/>
+                    <GridViewColumn Header="Тип" 
+                                    DisplayMemberBinding="{Binding TypeAnimal, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                    HeaderContainerStyle="{StaticResource HeaderGridViewColumn}"
+                                    Width="100"/>
+                    <GridViewColumn Header="Наименование" 
+                                    DisplayMemberBinding="{Binding Name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                    HeaderContainerStyle="{StaticResource HeaderGridViewColumn}"
+                                    Width="115"/>
+                    <GridViewColumn Header="Среда обитания" 
+                                    DisplayMemberBinding="{Binding Location, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                    HeaderContainerStyle="{StaticResource HeaderGridViewColumn}"
+                                    Width="125"/>
+                    <GridViewColumn Header="Питаются" 
+                                    DisplayMemberBinding="{Binding Feed, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                    HeaderContainerStyle="{StaticResource HeaderGridViewColumn}"
+                                    Width="115"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <StackPanel Grid.Column="1"
+                    Orientation="Vertical">
+            <Button 
+                Content="Добавить"
+                Style="{StaticResource AnimalsButton}"
+                Command="{Binding OpenAddAnimalWindowCommand, Source={StaticResource MainWindowViewModel}}">
+            </Button>
+            <Button
+                Content="Удалить"
+                Style="{StaticResource AnimalsButton}"
+                Command="{Binding }"
+                CommandParameter="{Binding ElementName=lvAnimals, Mode=OneWay}">
+            </Button>
+            <Button
+                Content="Изменить"
+                Style="{StaticResource AnimalsButton}"
+                Command="{Binding }"
+                CommandParameter="{Binding ElementName=lvAnimals, Mode=OneWay}">
+            </Button>
+        </StackPanel>
+
     </Grid>
 </Window>

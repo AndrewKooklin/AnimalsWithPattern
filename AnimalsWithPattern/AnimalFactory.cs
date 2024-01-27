@@ -15,10 +15,10 @@ namespace AnimalsWithPattern
         {
             switch (TypeAnimal)
             {
-                case "Mammals": return new Mammals(Name, Location, Feed);
-                case "Birds": return new Birds(Name, Location, Feed);
-                case "Amphibians": return new Amphibians(Name, Location, Feed);
-                default: return null;
+                case "Млекопитающиеся": return new Mammals(Name, Location, Feed);
+                case "Птицы": return new Birds(Name, Location, Feed);
+                case "Земноводные": return new Amphibians(Name, Location, Feed);
+                default: return new UnknownAnimals();
             }
         }
     }
