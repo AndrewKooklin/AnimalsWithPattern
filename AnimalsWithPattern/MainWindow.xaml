@@ -39,7 +39,7 @@
 
     </Window.Resources>
 
-    <Grid x:Name="gClients">
+    <Grid x:Name="gAnimals">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
@@ -59,7 +59,7 @@
             <ListView.View >
                 <GridView >
                     <GridViewColumn Header="Id" 
-                                    DisplayMemberBinding="{Binding Id, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                    DisplayMemberBinding="{Binding AnimalId, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                                     HeaderContainerStyle="{StaticResource HeaderGridViewColumn}"
                                     Width="40"/>
                     <GridViewColumn Header="Тип" 
@@ -91,7 +91,7 @@
             <Button
                 Content="Удалить"
                 Style="{StaticResource AnimalsButton}"
-                Command="{Binding }"
+                Command="{Binding DeleteAnimalCommand, Source={StaticResource MainWindowViewModel}}"
                 CommandParameter="{Binding ElementName=lvAnimals, Mode=OneWay}">
             </Button>
             <Button

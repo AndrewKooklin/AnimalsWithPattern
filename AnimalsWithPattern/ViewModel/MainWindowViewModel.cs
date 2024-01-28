@@ -12,19 +12,20 @@ namespace AnimalsWithPattern.ViewModel
 {
     public class MainWindowViewModel : BaseViewModel
     {
-        AnimalsDBEntities animalsDB = new AnimalsDBEntities();
+        ModelAnimal animalsDB = new ModelAnimal();
 
         public MainWindowViewModel()
         {
             animalsDB.Animals.Load();
             _animalsCollection = new ObservableCollection<Animals>();
 
-            foreach(var animal in animalsDB.Animals)
+            foreach (var animal in animalsDB.Animals)
             {
                 _animalsCollection.Add(animal);
             }
 
-            AddAnimalCommand = new AddAnimalCommand(animalsDB);
+            AddAnimalCommand = new AddAnimalCommand(animalsDB, _animalsCollection);
+            DeleteAnimalCommand = new DeleteAnimalCommand(animalsDB, _animalsCollection);
             OpenAddAnimalWindowCommand = new OpenAddAnimalWindowCommand();
     }
 
@@ -119,6 +120,8 @@ namespace AnimalsWithPattern.ViewModel
         }
 
         public ICommand AddAnimalCommand { get; set; }
+
+        public ICommand DeleteAnimalCommand { get; set; }
 
         public ICommand OpenAddAnimalWindowCommand { get; set; }
     }

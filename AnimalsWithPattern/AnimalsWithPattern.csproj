@@ -64,27 +64,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Animals.cs">
-      <DependentUpon>ModelAnimalsDB.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Animals.cs" />
+    <Compile Include="AnimalTypes.cs" />
     <Compile Include="Commands\AddAnimalCommand.cs" />
+    <Compile Include="Commands\DeleteAnimalCommand.cs" />
     <Compile Include="Commands\OpenAddAnimalWindowCommand.cs" />
-    <Compile Include="ModelAnimalsDB.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelAnimalsDB.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelAnimalsDB.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelAnimalsDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelAnimalsDB.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelAnimalsDB.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="UnknownAnimals.cs" />
+    <Compile Include="Commands\OpenChangeAnimalWindowCommand.cs" />
+    <Compile Include="HelpMethods.cs" />
+    <Compile Include="ModelAnimal.cs" />
+    <Compile Include="UnknownAnimal.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="View\AddAnimalWindow.xaml.cs">
@@ -94,13 +82,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Amphibians.cs" />
+    <Compile Include="Amphibian.cs" />
     <Compile Include="AnimalFactory.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Birds.cs" />
+    <Compile Include="Bird.cs" />
     <Compile Include="IAnimal.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -112,7 +100,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Mammals.cs" />
+    <Compile Include="Mammal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -130,13 +118,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="ModelAnimalsDB.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelAnimalsDB.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="ModelAnimalsDB.edmx.diagram">
-      <DependentUpon>ModelAnimalsDB.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -145,19 +126,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Content Include="ModelAnimalsDB.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModelAnimalsDB.Context.cs</LastGenOutput>
-      <DependentUpon>ModelAnimalsDB.edmx</DependentUpon>
-    </Content>
-    <Content Include="ModelAnimalsDB.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelAnimalsDB.edmx</DependentUpon>
-      <LastGenOutput>ModelAnimalsDB.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

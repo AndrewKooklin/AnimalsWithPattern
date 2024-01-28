@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AnimalsWithPattern.View"
+        xmlns:viewModel="clr-namespace:AnimalsWithPattern.ViewModel"
+        xmlns:src="clr-namespace:AnimalsWithPattern"
         mc:Ignorable="d"
         Title="AddAnimalWindow" 
         Height="410"
@@ -19,7 +21,7 @@
 
     <Window.Resources>
 
-
+        
 
         <Style x:Key="LabelStyle" TargetType="Label">
             <Setter Property="FontSize" Value="15"/>
@@ -39,7 +41,7 @@
             <Setter Property="VerticalAlignment" Value="Top"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
         </Style>
-        <Style x:Key="ListBoxStyle" TargetType="ListBox">
+        <Style x:Key="ComboBoxStyle" TargetType="ComboBox">
             <Setter Property="FontSize" Value="15"/>
             <Setter Property="Height" Value="30"/>
             <Setter Property="Width" Value="200"/>
@@ -86,6 +88,11 @@
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
 
+        <Grid.Resources>
+            <src:AnimalTypes x:Key="AnimalTypes"/>
+            <viewModel:MainWindowViewModel x:Key="MainWindowViewModel"/>
+        </Grid.Resources>
+
         <Label Content="Add animal form"
                Grid.ColumnSpan="2"
                FontSize="25" 
@@ -110,11 +117,14 @@
         <Label Content="Питается"
                Grid.Row="7"
                Style="{StaticResource LabelStyle}"/>
-        <ListBox x:Name="lbTypeAnimal"
-                 ItemsSource="{Binding}"
+        <ComboBox x:Name="cbTypeAnimal"
+                 ItemsSource="{StaticResource AnimalTypes}"
+                 Text="Тип животного"
+                 IsEditable="True"
+                 IsReadOnly="True"
                  Grid.Row="1"
                  Grid.Column="1"
-                 Style="{StaticResource ListBoxStyle}"/>
+                 Style="{StaticResource ComboBoxStyle}"/>
         <Label x:Name="lErrorTypeAnimal"
                Grid.Row="2"
                Grid.Column="1"
@@ -130,11 +140,11 @@
                Content=""
                Style="{StaticResource LabelErrorStyle}">
         </Label>
-        <TextBox x:Name="tbLocal"
+        <TextBox x:Name="tbLocation"
                  Grid.Row="5"
                  Grid.Column="1"
                  Style="{StaticResource TextBoxStyle}"/>
-        <Label x:Name="lErrorLocal"
+        <Label x:Name="lErrorLocation"
                Grid.Row="6"
                Grid.Column="1"
                Content=""
@@ -159,9 +169,9 @@
                 Content="Добавить"
                     Style="{StaticResource AddAnimalButton}"
                     Margin="50,0,0,0"
-                    Command="{Binding }"
+                    Command="{Binding AddAnimalCommand, Source={StaticResource MainWindowViewModel}}"
                     CommandParameter="{Binding ElementName=gAddAnimal, Mode=OneWay}"/>
-            <Button x:Name="btnChangeClient"
+            <Button x:Name="btnChangeAnimal"
                 Content="Изменить" 
                 Style="{StaticResource AddAnimalButton}"
                 Margin="10,0,0,0"

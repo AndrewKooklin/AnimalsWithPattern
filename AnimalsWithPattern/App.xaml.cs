@@ -13,5 +13,6 @@ namespace AnimalsWithPattern
     /// </summary>
     public partial class App : Application
     {
+
     }
 }

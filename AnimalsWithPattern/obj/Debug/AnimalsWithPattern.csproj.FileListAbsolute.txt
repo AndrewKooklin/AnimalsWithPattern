@@ -17,7 +17,6 @@ C:\repos\AnimalsWithPattern\AnimalsWithPattern\bin\Debug\EntityFramework.dll
 C:\repos\AnimalsWithPattern\AnimalsWithPattern\bin\Debug\EntityFramework.SqlServer.dll
 C:\repos\AnimalsWithPattern\AnimalsWithPattern\bin\Debug\EntityFramework.xml
 C:\repos\AnimalsWithPattern\AnimalsWithPattern\bin\Debug\EntityFramework.SqlServer.xml
-C:\repos\AnimalsWithPattern\AnimalsWithPattern\obj\Debug\AnimalsWithPattern_Content.g.cs
 C:\repos\AnimalsWithPattern\AnimalsWithPattern\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\repos\AnimalsWithPattern\AnimalsWithPattern\obj\Debug\AnimalsWithPattern.csproj.CopyComplete
 C:\repos\AnimalsWithPattern\AnimalsWithPattern\obj\Debug\View\AddAnimalWindow.g.cs

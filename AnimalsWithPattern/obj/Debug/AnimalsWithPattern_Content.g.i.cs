@@ -8,7 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("modelanimalsdb.context.tt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("modelanimalsdb.tt")]
 
 
