@@ -67,6 +67,9 @@
     <Compile Include="Animals.cs" />
     <Compile Include="AnimalTypes.cs" />
     <Compile Include="Commands\AddAnimalCommand.cs" />
+    <Compile Include="Commands\ChangeAnimalCommand.cs" />
+    <Compile Include="Commands\ClearAddAnimalFormCommand.cs" />
+    <Compile Include="Commands\CloseWindowCommand.cs" />
     <Compile Include="Commands\DeleteAnimalCommand.cs" />
     <Compile Include="Commands\OpenAddAnimalWindowCommand.cs" />
     <Compile Include="Commands\OpenChangeAnimalWindowCommand.cs" />

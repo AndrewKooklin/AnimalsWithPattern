@@ -1,4 +1,4 @@
-﻿<Window x:Class="AnimalsWithPattern.View.AddAnimalWindow"
+﻿<Window x:Name="window" x:Class="AnimalsWithPattern.View.AddAnimalWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -21,7 +21,7 @@
 
     <Window.Resources>
 
-        
+
 
         <Style x:Key="LabelStyle" TargetType="Label">
             <Setter Property="FontSize" Value="15"/>
@@ -104,7 +104,7 @@
         <Label x:Name="lAnimalId"
                Content=""
                Visibility="Collapsed"/>
-        
+
         <Label Content="Тип животного"
                Grid.Row="1"
                Style="{StaticResource LabelStyle}"/>
@@ -166,29 +166,29 @@
             Orientation="Horizontal">
 
             <Button x:Name="btnAddAnimal"
-                Content="Добавить"
+                    Content="Добавить"
                     Style="{StaticResource AddAnimalButton}"
                     Margin="50,0,0,0"
                     Command="{Binding AddAnimalCommand, Source={StaticResource MainWindowViewModel}}"
                     CommandParameter="{Binding ElementName=gAddAnimal, Mode=OneWay}"/>
             <Button x:Name="btnChangeAnimal"
-                Content="Изменить" 
-                Style="{StaticResource AddAnimalButton}"
-                Margin="10,0,0,0"
-                Command="{Binding }"
-                CommandParameter="{Binding ElementName=gAddAnimal, Mode=OneWay}"/>
+                    Content="Изменить" 
+                    Style="{StaticResource AddAnimalButton}"
+                    Margin="10,0,0,0"
+                    Command="{Binding ChangeAnimalCommand, Source={StaticResource MainWindowViewModel}}"
+                    CommandParameter="{Binding ElementName=gAddAnimal, Mode=OneWay}"/>
             <Button x:Name="btnClearForm"
-                Content="Очистить" 
-                Style="{StaticResource AddAnimalButton}"
-                Margin="10,0,0,0"
-                Command="{Binding }"
-                CommandParameter="{Binding ElementName=gAddAnimal, Mode=OneWay}"/>
+                    Content="Очистить" 
+                    Style="{StaticResource AddAnimalButton}"
+                    Margin="10,0,0,0"
+                    Command="{Binding ClearAddAnimalFormCommand, Source={StaticResource MainWindowViewModel}}"
+                    CommandParameter="{Binding ElementName=gAddAnimal, Mode=OneWay}"/>
             <Button x:Name="btnCancel"
-                Content="Отменить" 
-                Style="{StaticResource AddAnimalButton}"
-                Margin="10,0,0,0"
-                Command="{Binding }"
-                CommandParameter="{Binding ElementName=window, Mode=OneWay}"/>
+                    Content="Отменить" 
+                    Style="{StaticResource AddAnimalButton}"
+                    Margin="10,0,0,0"
+                    Command="{Binding CloseWindowCommand, Source={StaticResource MainWindowViewModel}}"
+                    CommandParameter="{Binding ElementName=window, Mode=OneWay}"/>
         </StackPanel>
 
     </Grid>

@@ -28,6 +28,9 @@ namespace AnimalsWithPattern.ViewModel
             DeleteAnimalCommand = new DeleteAnimalCommand(animalsDB, _animalsCollection);
             OpenAddAnimalWindowCommand = new OpenAddAnimalWindowCommand();
             OpenChangeAnimalWindowCommand = new OpenChangeAnimalWindowCommand();
+            ChangeAnimalCommand = new ChangeAnimalCommand(animalsDB, _animalsCollection);
+            ClearAddAnimalFormCommand = new ClearAddAnimalFormCommand();
+            CloseWindowCommand = new CloseWindowCommand();
     }
 
     public ObservableCollection<Animals> _animalsCollection;
@@ -127,5 +130,11 @@ namespace AnimalsWithPattern.ViewModel
         public ICommand OpenAddAnimalWindowCommand { get; set; }
 
         public ICommand OpenChangeAnimalWindowCommand { get; set; }
+
+        public ICommand ChangeAnimalCommand { get; set; }
+
+        public ICommand ClearAddAnimalFormCommand { get; set; }
+
+        public ICommand CloseWindowCommand { get; set; }
     }
 }

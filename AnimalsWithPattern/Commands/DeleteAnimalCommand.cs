@@ -43,8 +43,8 @@ namespace AnimalsWithPattern.Commands
                 else
                 {
                     Animals animal = (Animals)listAnimals.SelectedItem;
-                    _animalsCollection.Remove(animal);
                     _animalsDB.Animals.Remove(animal);
+                    _animalsCollection.Remove(animal);
                     _animalsDB.SaveChanges();
 
                     ((MainWindow)System.Windows.Application.Current.MainWindow).lvAnimals.ItemsSource = null;

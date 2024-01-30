@@ -12,8 +12,6 @@ namespace AnimalsWithPattern.Commands
 {
     public class AddAnimalCommand : ICommand
     {
-
-        
         ObservableCollection<Animals> _animalsCollection;
         HelpMethods helpMethods = new HelpMethods();
         AnimalFactory animalFactory = new AnimalFactory();
@@ -72,7 +70,6 @@ namespace AnimalsWithPattern.Commands
                 {
                     lErrorLocal.Content = "";
                 }
-
             }
             return true;
         }
