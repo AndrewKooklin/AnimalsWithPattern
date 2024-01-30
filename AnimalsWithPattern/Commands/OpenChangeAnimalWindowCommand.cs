@@ -13,6 +13,7 @@ namespace AnimalsWithPattern.Commands
     public class OpenChangeAnimalWindowCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
+        ListView listAnimals;
 
         public bool CanExecute(object parameter)
         {
@@ -23,7 +24,7 @@ namespace AnimalsWithPattern.Commands
         {
             if(parameter is ListView)
             {
-                ListView listAnimals = (ListView)parameter;
+                listAnimals = (ListView)parameter;
                 if(listAnimals.SelectedIndex == -1 || listAnimals.Items.Count == 0)
                 {
                     MessageBox.Show("Выберите животное","Выбор животного", 
@@ -34,10 +35,14 @@ namespace AnimalsWithPattern.Commands
                 {
                     Animals animal = (Animals)listAnimals.SelectedItem;
                     AddAnimalWindow addAnimalWindow = new AddAnimalWindow();
+                    string type = animal.TypeAnimal.ToString();
+                    
+                    addAnimalWindow.cbTypeAnimal.SelectedIndex = (listAnimals.SelectedIndex - 1);
                     addAnimalWindow.lAnimalId.Content = animal.AnimalId.ToString();
                     addAnimalWindow.tbName.Text = animal.Name.ToString();
                     addAnimalWindow.tbLocation.Text = animal.Location.ToString();
                     addAnimalWindow.tbFeed.Text = animal.Feed.ToString();
+                    addAnimalWindow.Show();
 
                 }
                 

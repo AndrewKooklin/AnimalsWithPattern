@@ -81,11 +81,11 @@ namespace AnimalsWithPattern.Commands
         {
             object iAnimal = animalFactory.GetAnimal(cbTypeAnimal.SelectedItem.ToString(),
                                                      tbName.Text, tbLocal.Text, tbFeed.Text);
-            Animals animal = new Animals(cbTypeAnimal.SelectedItem.ToString(),
+            iAnimal = new Animals(cbTypeAnimal.SelectedItem.ToString(),
                                                      tbName.Text, tbLocal.Text, tbFeed.Text);
 
-            _animalsCollection.Add(animal);
-            _animalsDB.Animals.Add(animal);
+            _animalsCollection.Add((Animals)iAnimal);
+            _animalsDB.Animals.Add((Animals)iAnimal);
             _animalsDB.SaveChanges();
 
             ((MainWindow)System.Windows.Application.Current.MainWindow).lvAnimals.ItemsSource = null;

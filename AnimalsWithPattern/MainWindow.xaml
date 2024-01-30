@@ -97,7 +97,7 @@
             <Button
                 Content="Изменить"
                 Style="{StaticResource AnimalsButton}"
-                Command="{Binding }"
+                Command="{Binding OpenChangeAnimalWindowCommand, Source={StaticResource MainWindowViewModel}}"
                 CommandParameter="{Binding ElementName=lvAnimals, Mode=OneWay}">
             </Button>
         </StackPanel>
