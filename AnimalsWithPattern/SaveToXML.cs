@@ -32,7 +32,8 @@ namespace AnimalsWithPattern
                 {
                     xmlFormatter.Serialize(fs, _animals);
                 }
-                MessageBox.Show("База сохранена \nв формате XML","Сохранение",MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("База сохранена \nв формате XML","Сохранение", 
+                                MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
     }

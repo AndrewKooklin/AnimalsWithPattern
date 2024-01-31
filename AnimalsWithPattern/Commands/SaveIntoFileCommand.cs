@@ -29,10 +29,10 @@ namespace AnimalsWithPattern.Commands
         public void Execute(object parameter)
         {
             FileWriter fw;
-            var saveToXML = new SaveToXML("AnimalsXML");
-            var saveToJSON = new SaveToJSON("AnimalsJSON");
+            var saveToXML = new SaveToXML("AnimalsXML.xml");
+            var saveToJSON = new SaveToJSON("AnimalsJSON.json");
             ComboBox cbFormat = (ComboBox)parameter;
-            string cbFormatValue = cbFormat.SelectedItem.ToString();
+            string cbFormatValue = cbFormat.SelectionBoxItem.ToString();
 
             switch (cbFormatValue)
             {
