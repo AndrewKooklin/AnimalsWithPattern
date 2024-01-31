@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 namespace AnimalsWithPattern
 {
     [NotMapped]
-    public class Mammal : Animals, IAnimal
+    public class Bird : Animals, IAnimal
     {
-        public Mammal() : base()
+        public Bird() : base()
         {
 
         }
 
-        public Mammal(int animalId, string typeAnimal, string name, string location, string feed) : base()
+        public Bird(int animalId, string typeAnimal, string name, string location, string feed) : base()
         {
             AnimalId = animalId;
             TypeAnimal = typeAnimal;
@@ -23,10 +23,5 @@ namespace AnimalsWithPattern
             Location = location;
             Feed = feed;
         }
-
-        //public string TypeAnimal { get; set; }
-        //public string Name { get; set; }
-        //public string Location { get; set; }
-        //public string Feed { get; set; }
     }
 }

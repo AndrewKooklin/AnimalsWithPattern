@@ -94,7 +94,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Animals.cs" />
+    <Compile Include="Model\Animals.cs" />
     <Compile Include="AnimalTypes.cs" />
     <Compile Include="Commands\AddAnimalCommand.cs" />
     <Compile Include="Commands\ChangeAnimalCommand.cs" />
@@ -104,13 +104,13 @@
     <Compile Include="Commands\OpenAddAnimalWindowCommand.cs" />
     <Compile Include="Commands\OpenChangeAnimalWindowCommand.cs" />
     <Compile Include="Commands\SaveIntoFileCommand.cs" />
-    <Compile Include="FileWriter.cs" />
+    <Compile Include="SaveToFileMethods\FileWriter.cs" />
     <Compile Include="HelpMethods.cs" />
-    <Compile Include="IFileSave.cs" />
+    <Compile Include="SaveToFileMethods\IFileSave.cs" />
     <Compile Include="ModelAnimal.cs" />
-    <Compile Include="SaveToJSON.cs" />
-    <Compile Include="SaveToXML.cs" />
-    <Compile Include="UnknownAnimal.cs" />
+    <Compile Include="SaveToFileMethods\SaveToJSON.cs" />
+    <Compile Include="SaveToFileMethods\SaveToXML.cs" />
+    <Compile Include="Model\UnknownAnimal.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="View\AddAnimalWindow.xaml.cs">
@@ -120,14 +120,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Amphibian.cs" />
+    <Compile Include="Model\Amphibian.cs" />
     <Compile Include="AnimalFactory.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Bird.cs" />
-    <Compile Include="IAnimal.cs" />
+    <Compile Include="Model\Bird.cs" />
+    <Compile Include="Model\IAnimal.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -138,7 +138,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Mammal.cs" />
+    <Compile Include="Model\Mammal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

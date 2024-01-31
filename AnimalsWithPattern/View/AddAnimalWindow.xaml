@@ -21,8 +21,6 @@
 
     <Window.Resources>
 
-
-
         <Style x:Key="LabelStyle" TargetType="Label">
             <Setter Property="FontSize" Value="15"/>
             <Setter Property="Height" Value="30"/>
