@@ -73,8 +73,13 @@
     <Compile Include="Commands\DeleteAnimalCommand.cs" />
     <Compile Include="Commands\OpenAddAnimalWindowCommand.cs" />
     <Compile Include="Commands\OpenChangeAnimalWindowCommand.cs" />
+    <Compile Include="Commands\SaveIntoFileCommand.cs" />
+    <Compile Include="FileWriter.cs" />
     <Compile Include="HelpMethods.cs" />
+    <Compile Include="IFileSave.cs" />
     <Compile Include="ModelAnimal.cs" />
+    <Compile Include="SaveToJSON.cs" />
+    <Compile Include="SaveToXML.cs" />
     <Compile Include="UnknownAnimal.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />

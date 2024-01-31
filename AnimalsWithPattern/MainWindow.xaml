@@ -37,6 +37,28 @@
             <Setter Property="Padding" Value="0"/>
         </Style>
 
+        <Style x:Key="FormatLabel" TargetType="{x:Type Label}">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Height" Value="34"/>
+            <Setter Property="Width" Value="85"/>
+            <Setter Property="Margin" Value="35 13 0 0"/>
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="Padding" Value="0"/>
+        </Style>
+
+        <Style x:Key="FormatComboBox" TargetType="{x:Type ComboBox}">
+            <Setter Property="Background" Value="Cyan"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="85"/>
+            <Setter Property="Margin" Value="10 0 0 0"/>
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="Padding" Value="10 3 0 0"/>
+        </Style>
+        <Style x:Key="FormatComboBoxItem" TargetType="{x:Type ComboBoxItem}">
+            <Setter Property="Background" Value="Cyan"/>
+        </Style>
+
     </Window.Resources>
 
     <Grid x:Name="gAnimals">
@@ -99,6 +121,23 @@
                 Style="{StaticResource AnimalsButton}"
                 Command="{Binding OpenChangeAnimalWindowCommand, Source={StaticResource MainWindowViewModel}}"
                 CommandParameter="{Binding ElementName=lvAnimals, Mode=OneWay}">
+            </Button>
+            <Label Content="Формат"
+                   Style="{StaticResource FormatLabel}"/>
+            <ComboBox x:Name="cbFormatType" 
+                      Style="{StaticResource FormatComboBox}">
+                <ComboBoxItem Content="XML"
+                              Style="{StaticResource FormatComboBoxItem}">
+                </ComboBoxItem>
+                <ComboBoxItem Content="JSON"
+                              Style="{StaticResource FormatComboBoxItem}">
+                </ComboBoxItem>
+            </ComboBox>
+            <Button
+                Content="Сохранить"
+                Style="{StaticResource AnimalsButton}"
+                Command="{Binding SaveIntoFileCommand, Source={StaticResource MainWindowViewModel}}"
+                CommandParameter="{Binding ElementName=cbFormatType, Mode=OneWay}">
             </Button>
         </StackPanel>
 

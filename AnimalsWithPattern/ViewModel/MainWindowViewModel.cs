@@ -31,6 +31,7 @@ namespace AnimalsWithPattern.ViewModel
             ChangeAnimalCommand = new ChangeAnimalCommand(animalsDB, _animalsCollection);
             ClearAddAnimalFormCommand = new ClearAddAnimalFormCommand();
             CloseWindowCommand = new CloseWindowCommand();
+            SaveIntoFileCommand = new SaveIntoFileCommand(animalsDB);
     }
 
     public ObservableCollection<Animals> _animalsCollection;
@@ -136,5 +137,7 @@ namespace AnimalsWithPattern.ViewModel
         public ICommand ClearAddAnimalFormCommand { get; set; }
 
         public ICommand CloseWindowCommand { get; set; }
+
+        public ICommand SaveIntoFileCommand { get; set; }
     }
 }
